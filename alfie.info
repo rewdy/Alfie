@@ -1,0 +1,59 @@
+name = Alfie
+description = Rewdy.com theme from 2014 and beyond. I am white, simple and clean. Featuring Source Sans Pro from <a href="http://brick.im">Brick.im</a>.
+version = v. 1
+core = 7.x
+engine = phptemplate
+
+
+; STYLESHEETS
+stylesheets[all][] = css/style.css
+;stylesheets[all][] = lib/font-awesome-4.1.0/css/font-awesome.min.css
+; ^-- Not loading this from here because we're using the fontawesome module
+
+; SCRIPTS
+scripts[] = js/global.js
+scripts[] = js/prism.js
+
+; PANELS LAYOUTS
+plugins[panels][layouts] = layouts
+
+; REGIONS
+;-- Primary Regions
+regions[header] = Header
+regions[content] = Content
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+
+;-- Footer Region
+regions[footer] = Footer
+
+;-- Secondary Regions
+regions[drawer] = Drawer
+regions[main_menu] = Main Menu
+regions[highlight] = Highlighted
+regions[preamble] = Preamble
+regions[prefoot] = Prefooter 
+
+;-- Supporter Regions
+regions[messages] = Messages Region
+regions[help] = Help Region
+
+
+; FEATURES
+features[] = logo
+features[] = name
+;features[] = slogan
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+;features[] = node_user_picture
+features[] = comment_user_picture
+
+
+; DEFAULT SETTINGS
+settings[alfie_google_analytics] = 0
+settings[alfie_layout_breadcrumbs] = 0
+settings[alfie_layout_sidebar_first] = 3
+settings[alfie_layout_sidebar_second] = 3
+settings[alfie_layout_front_sidebar_first] = 4
+settings[alfie_layout_front_sidebar_second] = 4

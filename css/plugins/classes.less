@@ -1,0 +1,157 @@
+/* Classes */
+.attn {
+	font-family:@altfont;
+	font-weight:400;
+	font-size:1.3em;
+	line-height:@lineheight;
+}
+.box {
+	background-color:@screen;
+	padding:1em;
+	margin-bottom:@lineheight;
+	> *:last-child {
+		margin-bottom:0;
+	}
+}
+.text-right,
+.text-right-d {
+	text-align:right;
+}
+.text-left,
+.text-left-d {
+	text-align:left;
+}
+.text-center,
+.text-center-d {
+	text-align:center;
+}
+
+@media only screen and (max-width:@breakpoint) {
+	.text-right-d {
+		text-align:left;
+	}
+	.text-left-d {
+		text-align:left;
+	}
+	.text-center-d {
+		text-align:left;
+	}
+	.text-right-m {
+		text-align:right;
+	}
+	.text-left-m {
+		text-align:left;
+	}
+	.text-center-m {
+		text-align:center;
+	}
+}
+
+ul.lined,
+ol.lined {
+	border-top: 1px solid #ddd;
+}
+ul.lined li {
+	list-style: none;
+	margin:0;
+	padding:0.4em;
+	border-bottom:1px solid #ddd;
+}
+ol.lined li {
+	list-style-position: inside;
+	margin:0;
+	padding:0.4em;
+	border-bottom:1px solid #ddd;
+}
+
+
+ul.blocked li {
+	list-style: none;
+	margin:0 0 (@lineheight/2) 0;
+}
+ol.blocked li {
+	list-style-position: inside;
+	margin:0 0 (@lineheight/2) 0;
+}
+
+ul.inline,
+ol.inline {
+	padding:0;
+	li {
+		display:inline;
+		list-style:none;
+		margin:0 1em 0 0;
+		padding:0;
+	}
+}
+
+img.right {
+	float: right;
+	margin: 0 0 0.5em 0.5em;
+	text-align: center;
+}
+img.left {
+	float: left;
+	margin: 0 0.5em 0.5em 0;
+	text-align: center;
+}
+table.narrow {
+	width: auto;
+}
+
+.show-mobile {
+	display:none;
+}
+@media only screen and (max-width:@breakpoint) {
+	.show-mobile {
+		display:block;
+	}
+	span.show-mobile,
+	i.show-mobile {
+		display:inline;
+	}
+	.show-big {
+		display:none;
+	}
+}
+
+// mixins
+.transition(@selection: all, @duration: 0.3s, @easing: linear) {
+	-webkit-transition:@selection @duration @easing;
+	-moz-transition:@selection @duration @easing;
+	-ms-transition:@selection @duration @easing;
+	transition:@selection @duration @easing;
+}
+.innerglow {
+	box-shadow:inset 0 0 0.5em rgba(0,0,0,0.1);
+}
+.transition {
+	-webkit-transition:all 0.5s ease-in;
+	-moz-transition:all 0.5s ease-in;
+	transition:all 0.5s ease-in;
+}
+
+div.box,
+.code-block {
+	padding:1em;
+	margin-bottom:@lineheight;
+	background-color:@screen;
+	p:last-child {
+		margin-bottom:0;
+	}
+}
+
+.code-block {
+	white-space:pre;
+}
+
+.accessible-hide,
+.assistive-text,
+.element-invisible {
+	position:absolute;
+	top:0;
+	left:0;
+	width:0;
+	height:0;
+	overflow:hidden;
+}

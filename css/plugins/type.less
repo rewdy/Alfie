@@ -1,0 +1,109 @@
+/* Type */
+
+body {
+	font-family:@font;
+	font-size:@size;
+	line-height:@lineheight;
+	font-weight:@fontweightnormal;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-ms-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin:0.2em 0 0.5em 0;
+	line-height:unit(@fontScale*0.93, em);
+	font-family:@heading;
+	font-weight:@fontweightbold;
+	font-size:1em;
+}
+
+h1 {
+	font-size:2em;
+}
+h2,
+.front h1 {
+	font-size:1.5em;
+	font-weight:@fontweightnormal;
+}
+h3 {
+	font-size:1.2em;
+}
+h4 {
+	font-size:1.1em;
+}
+
+p, ul, ol, blockquote, pre, table {
+	margin:0 0 @lineheight 0;
+}
+
+ul li,
+ol li {
+	margin-left:unit(@fontScale*2, em);
+}
+
+table {
+	border-collapse: collapse;
+	tr {
+		th, td {
+			padding:0 0.5em 0 0;
+			margin:0;
+		}
+		th {
+			text-align: left;
+		}
+	}
+}
+table.data {
+	width:100%;
+	border:2px solid @linecolor;
+	&.collapse {
+		width:auto;
+	}
+	tr {
+		th, td {
+			padding:0.25em 0.5em;
+			border-bottom:1px solid @linecolor;
+		}
+		th {
+			font-family:@altfont;
+			font-weight:@fontweightbold;
+			text-align: left;
+		}
+	}
+}
+
+blockquote {
+	padding:0.5em 0.8em;
+	font-size:1.2em;
+	font-style:italic;
+	line-height:@lineheight;
+	background-color:@screen;
+}
+// code style managed from the prism.less file
+// code, pre {
+// 	font-size:1.15em;
+// 	padding:0.2em;
+// 	background-color:@screen;
+// }
+pre {
+	padding:0.5em 0.8em;
+	white-space: pre-wrap;
+}
+
+acronym, abbr {
+	border-bottom:1px dotted @light;
+	cursor:help;
+}
+
+hr {
+	margin:1em 0;
+	border-top:1px solid @linecolor;
+}
+
+a {
+	color: @linkcolor;
+	&:hover {
+		color:@linkhover;
+	}
+}

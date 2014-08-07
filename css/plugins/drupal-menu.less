@@ -1,0 +1,95 @@
+/* Drupal Menu Styles */
+
+// main menu
+nav#main-menu {
+	background-color:@menubackgroundcolor;
+	border-bottom:1px solid @linecolor;
+	h2 {
+		display:none;
+	}
+	ul.menu {
+		margin:0;
+		padding:0;
+		text-align:center;
+		li {
+			margin:0;
+			padding:0;
+			display:inline;
+			list-style:none;
+			a {
+				display:inline-block;
+				margin:0 0.1em;
+				padding:0.85em 1.15em;
+				color:lighten(@color, 40%);
+				font-size:1.1em;
+				font-weight:300;
+				text-decoration:none;
+				&:hover {
+					color:@linkhover;
+				}
+				&.active {
+					font-weight:600;
+					color:@color;
+				}
+			}
+		}
+	}
+	@media only screen and (max-width:@breakpoint) {
+		.grid .full {
+			margin:0;
+		}
+	}
+}
+
+// sidebar menus
+.sidebar ul.menu {
+	margin:0 0 1em 0;
+	padding:0;
+	border-top:1px solid @menuline;
+}
+.sidebar ul.menu li {
+	list-style:none;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid @menuline;
+}
+.sidebar ul.menu li a {
+	display:block;
+	padding:0.2em;
+	text-decoration: none;
+	&:hover {
+		background-color:@menulighthover;
+	}
+	&.active-trail {
+		font-weight:@fontweightbold;
+	}
+}
+
+.sidebar ul.menu li ul {
+	padding-left:1em;
+	margin:0;
+	font-size:0.8em;
+}
+.sidebar ul.menu li ul li.last {
+	border-bottom:0 none;
+}
+
+.inline ul.menu li {
+	display:inline;
+	list-style:none;
+	margin-right:0.5em;
+}
+.inline_right ul.menu li {
+	display:inline;
+	list-style:none;
+	margin-left:0.5em;
+}
+
+/* Utility */
+.clearfixafter {
+	content: '\0020';
+	display: block;
+	clear: left;
+	height: 0;
+	overflow: hidden;
+}

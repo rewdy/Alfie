@@ -1,0 +1,276 @@
+/*
+
+Stylesheet
+----------
+
+Project:	Alfie
+Title:		Primary Stylesheet
+Date:		07/2014
+
+----------
+
+Table of Contents
+-----------------
+
+1. Core
+2. Layout
+3. Module
+4. Theme
+5. State
+
+----------
+
+*/
+
+// Pull in all variables
+@import "vars.less";
+
+
+/*
+1. Core
+-------
+*/
+
+// pull in core, type, and form plugins
+@import "plugins/core.less";
+@import "plugins/type.less";
+@import "plugins/drupal.less";
+@import "plugins/drupal-forms.less";
+
+body {
+	background-color:@footerbackground; // footer color set here
+}
+
+a {
+	.transition;
+}
+
+/*
+2. Layout
+---------
+*/
+
+// pull in grid
+@import "plugins/grid.less";
+
+@drawerWidth:19em;
+#control {
+	#drawer,
+	#page {
+		-webkit-transition:all 0.3s;
+		-moz-transition:all 0.3s;
+		-ms-transition:all 0.3s;
+		transition:all 0.3s;
+	}
+	#drawer {
+		position:fixed;
+		top:0;
+		left:-@drawerWidth;
+		width:@drawerWidth;
+		height:100%;
+		z-index:2;
+	}
+	#page {
+		position:relative;
+		top:0;
+		left:0;
+		width:100%;
+	}
+	&.open {
+		overflow:hidden;
+		width:100%;
+		#drawer {
+			left:0;
+		}
+		#page {
+			left:@drawerWidth;
+		}
+	}
+}
+
+#wrapper {
+	background-color:@background;
+	color:@color;
+}
+#site-header {
+	padding:10% 0;
+	//.gradient(#e9f4f4, #f8f8f8);
+	p {
+		font-size:1.2em;
+	}
+}
+#content-body,
+.content-row {
+	padding:3em 0;
+}
+footer {
+	padding:1em 0;
+	color:darken(@light, 5%);
+	a {
+		color:darken(@light, 20%);
+	}
+	.block {
+		font-size:0.9em;
+	}
+}
+
+
+/*
+3. Sections
+-----------
+*/
+
+// jump nav
+#jump-nav {
+	position:absolute;
+	top:5em;
+	left:50%;
+	z-index:100;
+	a {
+		display:block;
+		position:relative;
+		left:-50%;
+		top:-10em;
+		padding:0.5em;
+		color:#fff;
+		background-color:@accent;
+		&:focus {
+			top:0;
+		}
+	}
+}
+
+// drawer
+#drawer {
+	background-color:@accent;
+	color:#fff;
+	a {
+		color:#fff;
+	}
+	.liner {
+		padding:1em;
+	}
+}
+
+// site title
+#site-title {
+	font-size:1.2em;
+	font-weight:@fontweightbold;
+	a {
+		color:@color;
+		text-decoration:none;
+		&:hover {
+			color:@accent;
+		}
+	}
+}
+
+// nav
+#main-menu-holder {
+	padding-top:@lineheight;
+	a#drawer-toggle-link {
+		display:none;
+	}
+	ul.menu {
+		display:inline-block;
+		margin:0;
+		padding:0 0 @lineheight 0;
+		border-bottom:1px solid @linecolor;
+		li {
+			margin:0;
+			padding:0;
+			display:inline;
+			list-style:none;
+			a {
+				display:inline-block;
+				margin-right:1em;
+				font-size:1.1em;
+				text-decoration:none;
+				&:hover {
+					text-decoration:underline;
+				}
+				&.active {
+					color:@color;
+					font-weight:@fontweightbold;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+}
+
+.diary-teaser,
+.project-teaser,
+.lab-teaser {
+	margin-bottom:(2*@lineheight);
+}
+
+ul.feed-list {
+	margin:0 0 @lineheight 0;
+	padding:0;
+	li {
+		list-style:none;
+		margin:0 0 (@lineheight/2) 0;
+		padding:0;
+		span.type {
+			margin-left:0.5em;
+			font-size:0.8em;
+			color:@light;
+			a {
+				color:@light;
+				text-decoration:none;
+			}
+		}
+	}
+}
+
+.pill-link-list ul,
+ul.pill-link-list {
+	margin:0 0 @lineheight 0;
+	padding:0;
+	li {
+		display:inline;
+		margin:0;
+		padding:0;
+		a {
+			display:inline-block;
+			padding:0 0.75em;
+			margin:0 0.25em 0.5em 0;
+			background-color:#f2f2f2;
+			text-decoration:none;
+			-webkit-border-radius:1em;
+			-moz-border-radius:1em;
+			border-radius:1em;
+			&:hover {
+				color:@color;
+			}
+		}
+	}
+}
+
+/*
+4. Variations
+-------------
+*/
+
+// Basic for image layout
+img {
+	max-width:100%;
+	height:auto;
+}
+
+// gradient mixin
+.gradient(@start:#000, @stop:#fff) {
+	background: @start;
+	background: -moz-linear-gradient(top, @start 0%, @stop 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop));
+	background: -webkit-linear-gradient(top, @start 0%,@stop 100%);
+	background: -o-linear-gradient(top, @start 0%,@stop 100%);
+	background: -ms-linear-gradient(top, @start 0%,@stop 100%);
+	background: linear-gradient(to bottom, @start 0%,@stop 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@stop',GradientType=0 );
+}
+
+// pull in classes
+@import "plugins/classes.less";
+@import "plugins/prism.less";

@@ -1,0 +1,275 @@
+/* Drupal Stuff */
+
+// alerts and messages
+@statuscolor: #b5edc6;
+@warningcolor: #fdf0b8;
+@errorcolor: #fdcfbe;
+.status, .warning, .error, .messages {
+	position:relative;
+	display:block;
+	padding:0.5em 0;
+	margin:0;
+	background-color: #e6e6e6;
+	font-size:0.9em;
+	a.closer {
+		position:absolute;
+		top:0.5em;
+		right:0.6em;
+		color:#444;
+		font-weight:@fontweightbold;
+		text-decoration:none;
+		opacity:0.7;
+		.text {
+			.accessible-hide;
+		}
+		&:hover {
+			opacity:0.9;
+		}
+	}
+}
+.messages ul {
+	margin:0;
+}
+.status {
+	background-color: @statuscolor;
+	color: darken(@statuscolor, 60%);
+}
+.warning {
+	background-color: @warningcolor;
+}
+.error {
+	background-color: @errorcolor;
+	color: darken(@errorcolor, 60%);
+}
+
+
+// breadcrumbs
+#breadcrumbs {
+	margin-bottom:1em;
+	font-size:0.75em;
+	padding:0;
+	border-style:solid;
+	border-color:#e6e6e6;
+	border-width:1px 0;
+}
+#breadcrumbs a {
+	color:#999;
+	text-decoration: none;
+}
+#breadcrumbs a:hover {
+	color:#333;
+}
+
+// fields
+.field-label-hidden,
+.field-label-inline,
+.field-label-above {
+	margin-bottom:@lineheight;
+}
+.field-label {
+		font-weight:@fontweightbold;
+}
+
+// tabs
+ul.tabs {
+	margin:0 0 1em 0;
+	padding:0;
+	border-bottom:1px solid @linecolor;
+	&:after {
+		.clearfixed;
+	}
+	li {
+		display:inline;
+		list-style:none;
+		margin:0;
+		padding:0;
+		a {
+			display:inline-block;
+			padding:8px 0.9em 6px;
+			margin-right:0.1em;
+			background-color:#f8f8f8;
+			border: solid lighten(@linecolor, 5%);
+			border-width:1px 1px 0 1px;
+						color:@color;
+			text-decoration:none;
+			&.active,
+			&.active:hover {
+				padding:12px 1.1em 6px;
+				background-color:#fff;
+				color:@color;
+				border-color:@linecolor;
+				border-bottom:1px solid #fff;
+				margin-bottom:-1px;
+				font-weight:@fontweightbold;
+			}
+			&:hover {
+				background-color:#fff;
+				color:@accent;
+			}
+			i {
+				margin-left:-0.2em;
+			}
+		}
+	}
+}
+
+// feed icon
+a.feed-icon {
+	padding:0 0.4em;
+	display:inline-block;
+		color:#fff;
+	text-decoration:none;
+	background-color:#ff8e3a;
+	.transition;
+	&:hover {
+		-webkit-box-shadow:inset 0 0 0.75em rgba(0,0,0,0.3);
+		-moz-box-shadow:inset 0 0 0.75em rgba(0,0,0,0.3);
+		box-shadow:inset 0 0 0.75em rgba(0,0,0,0.3);
+	}
+}
+
+// general elements
+.block {
+	margin-bottom:1em;
+}
+
+span.marker {
+	display:inline-block;
+	padding:0 0.4em;
+	background-color:@pop;
+	color:#fff;
+	font-size:0.9em;
+	line-height:1.2em;
+		text-transform:uppercase;
+}
+
+// more links and link lists
+a.more-link,
+.more-link a,
+ul.links a {
+	display:inline-block;
+	padding:0.4em 0.8em;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:@light;
+	border:1px solid @linecolor;
+	&:hover {
+		background-color:@screen;
+	}
+}
+a.more-link:after,
+.more-link a:after,
+ul.links a:after {
+	content:' \203A';
+}
+
+// pager links
+ul.pager {
+	margin:0 0 2em 0;
+	padding-top:1.5em;
+	border-top:2px solid @linecolor;
+	li {
+		display:inline;
+		margin:0;
+		padding:0;
+		&.pager-current {
+			display:inline-block;
+			margin-right:0.25em;
+			padding:0.25em 0.75em;
+			background-color:@color;
+			color:#fff;
+			font-size:1em;
+			line-height:@lineheight;
+		}
+		a {
+			display:inline-block;
+			margin-right:0.25em;
+			padding:0.25em 0.75em;
+			background-color:@pop;
+			color:#fff;
+			font-size:1em;
+			line-height:@lineheight;
+			font-weight:400;
+			text-decoration:none;
+			&:hover {
+				text-decoration:underline;
+			}
+		}
+	}
+}
+
+// progress bar
+.progress {
+	.bar {
+		border:1px solid @accent;
+	}
+	.filled {
+		background-color:@accent;
+	}
+}
+
+// Search Block
+form#search-block-form {
+	margin-top:5px;
+}
+form#search-block-form .container-inline {
+	background-color:#e1e2e3;
+	border:1px solid #ccc;
+	padding-right:30px;
+	position:relative;
+	box-shadow:inset 0 0 8px #ccc; 
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+}
+form#search-block-form .container-inline input {
+	border-width:0;
+	background-color:transparent;
+	margin:0;
+	padding:5px;
+	width:178px;
+	font-size:15px;
+	line-height:22px;
+	height:22px;
+}
+form#search-block-form .container-inline input.form-submit{
+	position:absolute;
+	top:0;
+	right:0;
+	display:block;
+	width:30px;
+	height:32px;
+	text-indent:-300px;
+	overflow:hidden;
+	background:url(../img/graphics/search-submit-icon.png) no-repeat center center;
+}
+
+// password strength indicator
+.password-strength {
+	margin-bottom:1em;
+	padding:0.3em;
+	background-color:#f2f2f2;
+	max-width:20em;
+}
+.password-strength .password-strength-title {
+		font-weight:@fontweightbold;
+}
+.password-strength .password-strength-text {
+	float:right;
+}
+.password-strength .password-indicator .indicator {
+	clear:both;
+	height:3px;
+	background-color:@pop;
+	.transition;
+}
+
+/* Override Admin Menu */
+#admin-menu {
+	background:#222;
+	font-family:'Helvetica Neue', sans-serif;
+	font-size:15px;
+	font-weight:300;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
