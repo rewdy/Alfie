@@ -1,3 +1,4 @@
 # Alfie Drupal Theme
 
-Simple, clean Drupal theme for Rewdy.com in 2014.
+A crazy simple Drupal theme for my website, Rewdy.com, in 2014.
+
