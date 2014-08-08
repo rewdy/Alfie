@@ -151,6 +151,7 @@ footer .block{font-size:.9em}
 #main-menu-holder ul.menu li a.active{color:#444;font-weight:600;text-decoration:none}
 @media only screen and (max-width:640px){#main-menu-holder ul.menu{display:none} #main-menu-holder a.drawer-link{display:block;position:absolute;right:1em;top:3em}#main-menu-holder a.drawer-link .text{display:none}}
 .diary-teaser,.project-teaser,.lab-teaser,.portfolio-teaser{margin-bottom:3em}
+#content .row .g6:nth-child(2n+1){clear:left}
 .portfolio-teaser img{border:1px solid #ddd}
 .screenshot-thumbnails{background-color:#444;color:#fff;margin:0 -20% 1.5em;padding:1.5em;white-space:nowrap;vertical-align:top;overflow:scroll}.screenshot-thumbnails .screenshot{display:inline-block;margin:0 1.5em 0 0}
 @media only screen and (max-width:1120px){.screenshot-thumbnails{margin:0 0 1.5em 0}}

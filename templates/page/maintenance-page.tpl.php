@@ -136,10 +136,6 @@ $theme_path = $base_path . $directory;
 								
 								<?php print render($title_suffix); ?>
 
-								<?php print $feed_icons; ?>
-
-								<?php if ($tabs): ?><div class="tabs-holder"><?php print render($tabs); ?></div><?php endif; ?>
-
 							</header>
 
 							<div id="content" class="g12">
