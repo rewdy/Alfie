@@ -7,12 +7,13 @@ engine = phptemplate
 
 ; STYLESHEETS
 stylesheets[all][] = css/style.css
-;stylesheets[all][] = lib/font-awesome-4.1.0/css/font-awesome.min.css
-; ^-- Not loading this from here because we're using the fontawesome module
+; core nivo lightbox stylesheet compiled into main stylesheet. only theme is included here.
+stylesheets[all][] = lib/Nivo-Lightbox/themes/default/default.css
 
 ; SCRIPTS
-scripts[] = js/global.js
 scripts[] = js/prism.js
+scripts[] = lib/Nivo-Lightbox/nivo-lightbox.min.js
+scripts[] = js/global.js
 
 ; PANELS LAYOUTS
 plugins[panels][layouts] = layouts

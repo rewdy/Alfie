@@ -75,6 +75,8 @@
 
 			<?php if ($page['drawer']) : ?>
 			<div class="liner">
+				<a class="drawer-link" href="#"><i class="fa fa-caret-square-o-left"></i> <span class="text">Close</span></a>
+				
 				<?php print render($page['drawer']); ?>
 			</div>
 			<?php endif; ?>
@@ -210,6 +212,8 @@
 					<?php endif; ?>
 				</div> <!-- close .grid -->
 			</footer>
+
+			<div id="page-overlay"><!-- page overlay --></div>
 
 		</div> <!-- close div#page -->
 	</div> <!-- close div#control -->

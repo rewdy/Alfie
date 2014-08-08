@@ -51,7 +51,7 @@
 */
 ?>
 
-	<a id="drawer-toggle-link" href="#"><i class="fa fa-bars"></i> <span class="text">Menu</span></a>
+	<a class="drawer-link" href="#"><i class="fa fa-bars"></i> <span class="text">Menu</span></a>
 	<?php print $content ?>
 
 </nav>
