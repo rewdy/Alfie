@@ -110,8 +110,9 @@ $theme_path = $base_path . $directory;
 								<?php $title_tag = ($title) ? 'div' : 'h1'; ?>
 								<<?php echo $title_tag; ?> id="site-title">
 									<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-									<?php if ($logo): ?><span class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></span><?php endif; ?>
-									<span class="text"><?php print $site_name; ?></span>
+										<?php if ($logo): ?><span class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></span><?php endif; ?>
+										<span class="text"><?php print $site_name; ?></span>
+									</a>
 								</<?php echo $title_tag; ?>>
 							</div>
 						</div> <!-- close .grid -->
