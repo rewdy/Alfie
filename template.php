@@ -284,7 +284,7 @@ function alfie_status_messages($variables) {
 // Modify the feed icon ouput
 function alfie_feed_icon(&$variables) {
 	// build the parts
-	$link_text = '<i class="fa fa-rss"></i>' . t('Subscribe');
+	$link_text = '<i class="fa fa-rss"></i> ' . t('Subscribe');
 	$link_title = t('Subscribe to !feed-title', array('!feed-title' => $variables['title']));
 	// return the html
 	return l(
