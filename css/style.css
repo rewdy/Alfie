@@ -200,6 +200,7 @@ ul.inline,ol.inline{padding:0}ul.inline li,ol.inline li{display:inline;list-styl
 img.right{float:right;margin:0 0 .5em .5em;text-align:center}
 img.left{float:left;margin:0 .5em .5em 0;text-align:center}
 table.narrow{width:auto}
+.margin-collapse{margin-bottom:0}
 .show-mobile{display:none}
 @media only screen and (max-width:640px){.show-mobile{display:block} span.show-mobile,i.show-mobile{display:inline} .show-big{display:none}}.innerglow{box-shadow:inset 0 0 .5em rgba(0,0,0,0.1)}
 .transition{-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;transition:all .3s ease-in}
