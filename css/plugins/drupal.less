@@ -87,7 +87,7 @@ ul.tabs {
 			display:inline-block;
 			padding:8px 0.9em 6px;
 			margin-right:0.1em;
-			background-color:#f8f8f8;
+			background-color:darken(@background, 1%);
 			border: solid lighten(@linecolor, 5%);
 			border-width:1px 1px 0 1px;
 						color:@color;
@@ -95,15 +95,15 @@ ul.tabs {
 			&.active,
 			&.active:hover {
 				padding:12px 1.1em 6px;
-				background-color:#fff;
+				background-color:@background;
 				color:@color;
 				border-color:@linecolor;
-				border-bottom:1px solid #fff;
+				border-bottom:1px solid @background;
 				margin-bottom:-1px;
 				font-weight:@fontweightbold;
 			}
 			&:hover {
-				background-color:#fff;
+				background-color:@background;
 				color:@accent;
 			}
 			i {
@@ -152,6 +152,7 @@ ul.links a {
 	text-transform:uppercase;
 	text-decoration:none;
 	color:@light;
+	background-color:#fff;
 	border:1px solid @linecolor;
 	&:hover {
 		background-color:@screen;
