@@ -1,0 +1,30 @@
+{
+  "name": "Alfie",
+  "version": "1.0.0",
+  "description": "Drupal theme for Rewdy.com v 1.2",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.5",
+    "cssnano": "^3.5.2",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
+    "gulp-postcss": "^6.1.0",
+    "gulp-watch": "^4.3.5",
+    "run-sequence": "^1.1.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rewdy/Alfie.git"
+  },
+  "keywords": [
+    "Drupal",
+    "Theme"
+  ],
+  "author": "Andrew Meyer",
+  "license": "ISC"
+}

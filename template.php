@@ -22,9 +22,12 @@ function alfie_preprocess(&$vars, $hook) {
 		}
 
 		/**
-		 * Add Webfont
+		 * Add Webfonts
 		*/
-		drupal_add_css('http://brick.a.ssl.fastly.net/Source+Sans+Pro:400,600,400i,600i/Source+Code+Pro:400+600/', array('type' => 'external'));
+		// with light weight
+		// drupal_add_css('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Space+Mono', array('type' => 'external'));
+		// no light weight
+		drupal_add_css('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Space+Mono', array('type' => 'external'));
 
 		/* CSS Classes to Remove
 		 * ---------------------
@@ -48,7 +51,7 @@ function alfie_preprocess(&$vars, $hook) {
 		$path_all = drupal_get_path_alias($_GET['q']);
 		array_push($classes_to_remove_from_body, drupal_html_class('path-' . $path_all));
 		array_push($classes_to_remove_from_body, drupal_html_class('page-' . $path_all));
-		
+
 		// remove body path first class
 		$path = explode('/', $_SERVER['REQUEST_URI']);
 		if($path['0']){
@@ -72,7 +75,7 @@ function alfie_preprocess(&$vars, $hook) {
 		/* Grid Setup
 		 * ----------
 		*/
-		
+
 		// alias for utility
 		$is_front = $vars['is_front'];
 		$page = $vars['page'];
@@ -92,7 +95,7 @@ function alfie_preprocess(&$vars, $hook) {
 		$g_sidebar_first_width = ($is_front) ? theme_get_setting('alfie_layout_front_sidebar_first') : theme_get_setting('alfie_layout_sidebar_first');
 		$g_sidebar_second_width = ($is_front) ? theme_get_setting('alfie_layout_front_sidebar_second') : theme_get_setting('alfie_layout_sidebar_second');
 
-		// calculations 
+		// calculations
 		$grid_main_count = $g_total_cols;
 		if (!empty($page['sidebar_first'])) {
 			$grid_main_count -= $g_sidebar_first_width;
@@ -117,7 +120,7 @@ function alfie_preprocess(&$vars, $hook) {
 
 		// remove all the bad, bad classes
 		$vars['classes_array'] = array_values(array_diff($vars['classes_array'],$classes_to_remove_from_block));
-		
+
 	}
 	elseif ($hook == "node") {
 
@@ -127,20 +130,20 @@ function alfie_preprocess(&$vars, $hook) {
 
 		// remove all the bad, bad classes
 		$vars['classes_array'] = array_values(array_diff($vars['classes_array'],$classes_to_remove_from_node));
-		
+
 	}
 	elseif ($hook == "field") {
-		
+
 		$classes_to_remove_from_field = array(
 			'clearfix',
 			'field',
 			'field-item',
 			'field-type-' . preg_replace('/_/', '-', $vars['element']['#field_type'])
 		);
-		
+
 		// remove all the bad, bad classes
 		$vars['classes_array'] = array_values(array_diff($vars['classes_array'],$classes_to_remove_from_field));
-		
+
 	}
 
 }
@@ -158,7 +161,7 @@ function alfie_preprocess_views_view(&$vars) {
 		'view-display-id-' . $vars['display_id'],
 		'view-dom-id-' . $vars['dom_id']
 	);
-	
+
 	// remove all the bad, bad classes
 	$vars['classes_array'] = array_values(array_diff($vars['classes_array'],$classes_to_remove_from_view));
 
@@ -213,7 +216,7 @@ function alfie_menu_tree($variables) {
 
 // clean up some classes on menus
 function alfie_menu_link(array $variables) {
-	
+
 	// custom stuff to remove extra classes
 	$classes_to_remove_from_links = array();
 
@@ -288,12 +291,12 @@ function alfie_feed_icon(&$variables) {
 	$link_title = t('Subscribe to !feed-title', array('!feed-title' => $variables['title']));
 	// return the html
 	return l(
-		$link_text, 
-		$variables['url'], 
+		$link_text,
+		$variables['url'],
 		array(
-			'html' => true, 
+			'html' => true,
 			'attributes' => array(
-				'class' => 'feed-icon', 
+				'class' => 'feed-icon',
 				'title' => $link_title
 			)
 		)
